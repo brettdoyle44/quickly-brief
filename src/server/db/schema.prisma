@@ -1,0 +1,34 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id             String    @id @default(cuid())
+  createdAt      DateTime  @default(now())
+  modifiedAt     DateTime  @default(now())
+  email          String    @unique
+  ownedProjects  Project[] @relation("OwnedProjects")
+  memberProjects Project[] @relation("MemberProjects")
+  name           String?
+}
+
+model Project {
+  id         String   @id @default(cuid())
+  createdAt  DateTime @default(now())
+  modifiedAt DateTime @default(now())
+  owner      User     @relation("OwnedProjects", fields: [ownerId], references: [id])
+  ownerId    String
+  members    User[]   @relation("MemberProjects")
+  name       String
+  slug       String   @unique
+
+  stripeCustomerId       String?   @unique
+  stripeSubscriptionId   String?   @unique
+  stripePriceId          String?
+  stripeCurrentPeriodEnd DateTime?
+}
