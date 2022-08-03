@@ -26,9 +26,13 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@headlessui/react": "^1.6.6",
+    "@heroicons/react": "^1.0.6",
     "@prisma/client": "^3.9.2",
     "@urql/exchange-graphcache": "^4.3.6",
     "apollo-server-micro": "^3.6.3",
+    "autoprefixer": "^10.4.7",
+    "classnames": "^2.3.1",
     "cookie-session": "^2.0.0",
     "dotenv": "^16.0.0",
     "graphql": "^15.8.0",
@@ -39,6 +43,7 @@
     "nexus": "^1.2.0",
     "passport": "^0.5.2",
     "passport-magic-login": "1.0.9",
+    "postcss": "^8.4.14",
     "postmark": "^3.0.1",
     "raw-body": "^2.5.1",
     "react": "^17.0.2",
@@ -46,6 +51,7 @@
     "react-hot-toast": "^2.2.0",
     "slug": "^5.2.0",
     "stripe": "^8.205.0",
+    "tailwindcss": "^3.1.6",
     "urql": "^2.2.0"
   },
   "devDependencies": {
@@ -59,7 +65,7 @@
     "@graphql-codegen/typescript-urql": "^3.5.3",
     "@graphql-codegen/typescript-urql-graphcache": "^2.2.6",
     "@netlify/plugin-nextjs": "^4.2.7",
-    "@stripe/stripe-js": "^1.23.0",
+    "@stripe/stripe-js": "^1.35.0",
     "@types/common-tags": "^1.8.1",
     "@types/cookie-session": "^2.0.44",
     "@types/jest": "^27.4.0",
