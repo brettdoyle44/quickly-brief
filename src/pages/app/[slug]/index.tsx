@@ -2,6 +2,8 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import UpgradeButton from "../../../client/components/UpgradeButton";
 import { useGetProjectQuery } from "../../../client/graphql/getProject.generated";
+import NavBar from "../../../client/components/Navbar";
+import DashboardWrapper from "../../../client/components/DashboardWrapper";
 
 function Project() {
   const router = useRouter();
@@ -22,9 +24,14 @@ function Project() {
 
   return (
     <>
-      <h1>{project.name}</h1>
-      {!project.paidPlan && <UpgradeButton projectId={project.id} />}
-      <Link href={`/app/${project.slug}/settings`}>Settings</Link>
+      <NavBar slug={slug} />
+      <DashboardWrapper title="Dashboard">
+        <div className="px-4 py-8 sm:px-0">
+          <div className="border-4 border-dashed border-gray-200 rounded-lg h-96" />
+        </div>
+      </DashboardWrapper>
+      {/* {!project.paidPlan && <UpgradeButton projectId={project.id} />}
+      <Link href={`/app/${project.slug}/settings`}>Settings</Link> */}
     </>
   );
 }

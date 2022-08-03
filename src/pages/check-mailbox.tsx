@@ -7,10 +7,29 @@ function CheckMailbox() {
 
   return (
     <>
-      <h1>Check your mailbox!</h1>
-      <p>We've sent you a magic link to {email ? email : "your email"}.</p>
-      <p>Click on the link to finish signing in.</p>
-      {code && <p>Make sure the verification code matches {code}!</p>}
+      <div className="min-h-full flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+        <div className="sm:mx-auto sm:w-full sm:max-w-md">
+          <img
+            className="mx-auto h-10 w-auto"
+            src="Quickly-Brief-Logo-Black.png"
+            alt="Quickly Brief"
+          />
+          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+            Check your mailbox!
+          </h2>
+          <p className="mt-6 text-center">
+            We've sent you a magic link to {email ? email : "your email"}.
+          </p>
+          <p className="mt-6 text-center">
+            Click on the link to finish signing in.
+          </p>
+          {code && (
+            <p className="mt-6 text-center">
+              Make sure the verification code matches {code}!
+            </p>
+          )}
+        </div>
+      </div>
     </>
   );
 }

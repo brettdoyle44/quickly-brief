@@ -46,6 +46,10 @@ export default function Dashboard() {
   const endCursor = pageInfo?.endCursor;
   const hasNextPage = Boolean(pageInfo?.hasNextPage);
 
+  if (projects?.edges?.length === 1) {
+    router.push(`/app/${projects?.edges[0]?.node?.slug}`);
+  }
+
   return (
     <>
       <h1>Hello {data.currentUser.name}!</h1>
