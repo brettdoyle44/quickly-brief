@@ -2,18 +2,21 @@ import Link from "next/link";
 import { useGetCurrentUserQuery } from "../client/graphql/getCurrentUser.generated";
 import { Fragment, SVGProps } from "react";
 import { Popover, Transition } from "@headlessui/react";
+import HomeSignUpForm from "../client/components/HomeSignUpForm";
 import {
-  CloudUploadIcon,
+  ArrowPathIcon,
+  Bars3Icon,
+  CloudArrowUpIcon,
   CogIcon,
   LockClosedIcon,
-  MenuIcon,
-  RefreshIcon,
   ServerIcon,
   ShieldCheckIcon,
-  XIcon,
-} from "@heroicons/react/outline";
-import { ExternalLinkIcon } from "@heroicons/react/solid";
-import HomeSignUpForm from "../client/components/HomeSignUpForm";
+  XMarkIcon,
+} from "@heroicons/react/24/outline";
+import {
+  ArrowTopRightOnSquareIcon,
+  ChevronRightIcon,
+} from "@heroicons/react/20/solid";
 
 const navigation = [
   { name: "Product", href: "#" },
@@ -26,7 +29,7 @@ const features = [
     name: "Push to Deploy",
     description:
       "Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi vitae lobortis.",
-    icon: CloudUploadIcon,
+    icon: CloudArrowUpIcon,
   },
   {
     name: "SSL Certificates",
@@ -38,7 +41,7 @@ const features = [
     name: "Simple Queues",
     description:
       "Rerum quas incidunt deleniti quaerat suscipit mollitia. Amet repellendus ut odit dolores qui.",
-    icon: RefreshIcon,
+    icon: ArrowPathIcon,
   },
   {
     name: "Advanced Security",
@@ -147,7 +150,7 @@ const footerNavigation = {
     {
       name: "Facebook",
       href: "#",
-      icon: (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
+      icon: (props: any) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
             fillRule="evenodd"
@@ -160,7 +163,7 @@ const footerNavigation = {
     {
       name: "Instagram",
       href: "#",
-      icon: (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
+      icon: (props: any) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
             fillRule="evenodd"
@@ -173,7 +176,7 @@ const footerNavigation = {
     {
       name: "Twitter",
       href: "#",
-      icon: (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
+      icon: (props: any) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
         </svg>
@@ -182,7 +185,7 @@ const footerNavigation = {
     {
       name: "GitHub",
       href: "#",
-      icon: (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
+      icon: (props: any) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
             fillRule="evenodd"
@@ -195,7 +198,7 @@ const footerNavigation = {
     {
       name: "Dribbble",
       href: "#",
-      icon: (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
+      icon: (props: any) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
             fillRule="evenodd"
@@ -234,7 +237,7 @@ function Homepage() {
                     <div className="-mr-2 flex items-center md:hidden">
                       <Popover.Button className="bg-gray-900 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-800 focus:outline-none focus:ring-2 focus-ring-inset focus:ring-white">
                         <span className="sr-only">Open main menu</span>
-                        <MenuIcon className="h-6 w-6" aria-hidden="true" />
+                        <Bars3Icon className="h-6 w-6" aria-hidden="true" />
                       </Popover.Button>
                     </div>
                   </div>
@@ -292,7 +295,7 @@ function Homepage() {
                     <div className="-mr-2">
                       <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-600">
                         <span className="sr-only">Close menu</span>
-                        <XIcon className="h-6 w-6" aria-hidden="true" />
+                        <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                       </Popover.Button>
                     </div>
                   </div>
@@ -602,7 +605,7 @@ function Homepage() {
                         className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-50"
                       >
                         Visit the help center
-                        <ExternalLinkIcon
+                        <ArrowTopRightOnSquareIcon
                           className="-mr-1 ml-3 h-5 w-5 text-gray-400"
                           aria-hidden="true"
                         />

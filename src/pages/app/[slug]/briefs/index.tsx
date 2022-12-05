@@ -4,6 +4,7 @@ import UpgradeButton from "../../../../client/components/UpgradeButton";
 import { useGetProjectQuery } from "../../../../client/graphql/getProject.generated";
 import NavBar from "../../../../client/components/Navbar";
 import DashboardWrapper from "../../../../client/components/DashboardWrapper";
+import BriefBuilder from "../../../../client/components/BriefBuilderTwo";
 
 const items = [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }];
 
@@ -28,13 +29,14 @@ function Briefs() {
     <>
       <NavBar slug={slug} />
       <DashboardWrapper title="Briefs">
-        <ul role="list" className="divide-y divide-gray-200">
+        {/* <ul role="list" className="divide-y divide-gray-200">
           {items.map((item) => (
             <li key={item.id} className="py-4">
               Something
             </li>
           ))}
-        </ul>
+        </ul> */}
+        <BriefBuilder />
       </DashboardWrapper>
     </>
   );
